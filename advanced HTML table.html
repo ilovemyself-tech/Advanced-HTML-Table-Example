@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced HTML Table Examples for HCIT NQF Level 5</title>
+    <style>
+       /*General page styling */
+    body { 
+       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       line-height: 1.6;
+       color: #333;
+       max-width: 1200px;
+       margin:0 auto;
+       padding:20px;
+       background-color: #f5f5f5;
+       }
+       h1, h2 {
+        color:#157cc0;
+        text-align:  center;
+       }
+       .container{
+        background-color: rgb(238, 231, 231);
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(158, 2, 2, 0.541);
+        padding: 20px;
+        margin-bottom: 30px;
+       }
+       .fancy-table {
+        border-collapse: collapse;
+        margin: 20px 0;
+        border-radius: rgb(45, 216, 23) 8px;
+       }
+       </style>
+</head>
+<body>
+    <h1>Advanced HTML Table Examples</h1>
+    <p>This document demonstrates various HTML table attributes and CSS styling techniques for HCIT NQF Level 5.</p>
+    
+    <div class="container">
+        <h2>1. Basic Structure with colspan and rowspan</h2>
+        
+        <table class="fancy-table">
+            <caption>Student Performance Report - Using colspan and rowspan</caption>
+            <thead>
+                <tr>
+                    <th rowspan="2">Student Name</th>
+                    <th colspan="3">Subject Scores</th>
+                    <th rowspan="2">Overall Grade</th>
+                </tr>
+                <tr>
+                    <th>HTML</th>
+                    <th>CSS</th>
+                    <th>JavaScript</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John Smith</td>
+                    <td>85</td>
+                    <td>78</td>
+                    <td>92</td>
+                    <td rowspan="2" class="special-cell">Distinction</td>
+                </tr>
+                <tr class="active-row">
+                    <td>Jane Doe</td>
+                    <td>95</td>
+                    <td>89</td>
+                    <td>94</td>
+                </tr>
+                <tr>
+                    <td>Michael Johnson</td>
+                    <td>65</td>
+                    <td>72</td>
+                    <td>68</td>
+                    <td>Pass</td>
+                </tr>
+                <tr>
+                    <td>Emily Williams</td>
+                    <td colspan="3" class="yellow-cell">On Leave - Assessment Pending</td>
+                    <td>N/A</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Class Average</td>
+                    <td>81.7</td>
+                    <td>79.7</td>
+                    <td>84.7</td>
+                    <td>Merit</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    
+    <div class="container">
+        <h2>2. Complex Table with Nested Tables</h2>
+        
+        <table class="fancy-table">
+            <caption>Department Structure with Nested Tables</caption>
+            <thead>
+                <tr>
+                    <th>Department</th>
+                    <th>Manager</th>
+                    <th>Team Members</th>
+                    <th>Budget</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="2" class="purple-cell">Web Development</td>
+                    <td rowspan="2">Sarah Johnson</td>
+                    <td>
+                        <table class="nested-table">
+                            <tr>
+                                <th>Name</th>
+                                <th>Role</th>
+                            </tr>
+                            <tr>
+                                <td>Mark Smith</td>
+                                <td>Front-end</td>
+                            </tr>
+                            <tr>
+                                <td>Lisa Wong</td>
+                                <td>Back-end</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td rowspan="2">$250,000</td>
+                </tr>
+                <tr>
+                    <td>
+                        <table class="nested-table">
+                            <tr>
+                                <th>Project</th>
+                                <th>Deadline</th>
+                            </tr>
+                            <tr>
+                                <td>Company Website</td>
+                                <td>Oct 15</td>
+                            </tr>
+                            <tr>
+                                <td>Mobile App</td>
+                                <td>Dec 1</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="green-cell">Graphic Design</td>
+                    <td>David Lee</td>
+                    <td colspan="2">
+                        <table class="nested-table">
+                            <tr>
+                                <th>Team Member</th>
+                                <th>Specialization</th>
+                                <th>Status</th>
+                            </tr>
+                            <tr>
+                                <td>Emma Wilson</td>
+                                <td>UI/UX</td>
+                                <td>Active</td>
+                            </tr>
+                            <tr>
+                                <td>Ryan Garcia</td>
+                                <td>3D Design</td>
+                                <td>On Leave</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        
+        <div class="container">
+            <h2>3. Comparison Table with colgroup</h2>
+            
+            <table class="fancy-table comparison-table">
+                <caption>Product Comparison</caption>
+                <colgroup>
+                    <col style="width: 20%">
+                    <col style="width: 25%; background-color: rgba(52, 152, 219, 0.1)">
+                    <col style="width: 25%; background-color: rgba(46, 204, 113, 0.1)">
+                    <col style="width: 30%; background-color: rgba(155, 89, 182, 0.1)">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Basic Plan</th>
+                        <th>Premium Plan</th>
+                        <th>Enterprise Plan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Price</td>
+                        <td>$9.99/month</td>
+                        <td>$19.99/month</td>
+                        <td>$49.99/month</td>
+                    </tr>
+                    <tr>
+                        <td>Storage</td>
+                        <td>5GB</td>
+                        <td>20GB</td>
+                        <td>Unlimited</td>
+                    </tr>
+                    <tr>
+                        <td>Users</td>
+                        <td>1</td>
+                        <td>5</td>
+                        <td>Unlimited</td>
+                    </tr>
+                    <tr>
+                        <td>Support</td>
+                        <td>Email Only</td>
+                        <td>Email & Phone</td>
+                        <td>24/7 Dedicated</td>
+                    </tr>
+                    <tr>
+                        <td>Custom Domain</td>
+                        <td>No</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Best For</td>
+                        <td>Individuals</td>
+                        <td>Small Teams</td>
+                        <td>Large Organizations</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        
+        <div class="container">
+            <h2>4. Calendar with Complex spanning</h2>
+                    
+        <table class="fancy-table">
+            <caption>Project Schedule - August 2023</caption>
+            <thead>
+                <tr>
+                    <th colspan="7">August 2023</th>
+                </tr>
+                <tr>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                    <th>Sun</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td colspan="2" class="green-cell">Website Design<br>(Aug 3-4)</td>
+                    <td>5</td>
+                    <td colspan="2" rowspan="2" style="background-color: #bdc3c7; text-align: center;">Weekend</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="yellow-cell">Team Planning<br>(Aug 7-9)</td>
+                    <td colspan="2" class="purple-cell">Stakeholder Meeting<br>(Aug 10-11)</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>15</td>
+                    <td rowspan="2" class="special-cell">Deadline<br>Database Setup</td>
+                    <td>17</td>
+                    <td>18</td>
+                    <td colspan="2" rowspan="2" style="background-color: #bdc3c7; text-align: center;">Weekend</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="green-cell">Frontend Development<br>(Aug 21-22)</td>
+                    <td colspan="2" class="yellow-cell">Testing Phase<br>(Aug 24-25)</td>
+                </tr>
+                <tr>
+                    <td colspan="5" class="special-cell">Final Project Review Week (Aug 28 - Sep 1)</td>
+                    <td colspan="2" style="background-color: #bdc3c7; text-align: center;">Weekend</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="container">
+        <h2>5. Features Table with Header Groups</h2>
+        
+        <table class="fancy-table features-table">
+            <caption>HTML Table Features and Attributes</caption>
+            <thead>
+                <tr>
+                    <th colspan="4">HTML Table Essential Reference</th>
+                </tr>
+                <tr>
+                    <th>Category</th>
+                    <th>Attribute/Element</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="feature-group">
+                    <td colspan="4">Basic Table Structure</td>
+                </tr>
+                <tr>
+                    <td rowspan="5">Elements</td>
+                    <td><code>&lt;table&gt;</code></td>
+                    <td>Defines an HTML table</td>
+                    <td><code>&lt;table&gt;...&lt;/table&gt;</code></td>
+                </tr>
+                <tr>
+                    <td><code>&lt;tr&gt;</code></td>
+                    <td>Defines a table row</td>
+                    <td><code>&lt;tr&gt;...&lt;/tr&gt;</code></td>
+                </tr>
+                <tr>
+                    <td><code>&lt;th&gt;</code></td>
+                    <td>Defines a header cell</td>
+                    <td><code>&lt;th&gt;Header&lt;/th&gt;</code></td>
+                </tr>
+                <tr>
+                    <td><code>&lt;td&gt;</code></td>
+                    <td>Defines a standard data cell</td>
+                    <td><code>&lt;td&gt;Data&lt;/td&gt;</code></td>
+                </tr>
+                <tr>
+                    <td><code>&lt;caption&gt;</code></td>
+                    <td>Defines a table caption</td>
+                    <td><code>&lt;caption&gt;Title&lt;/caption&gt;</code></td>
+                </tr>
+                
+                <tr class="feature-group">
+                    <td colspan="4">Table Sections</td>
+                </tr>
+                <tr>
+                    <td rowspan="3">Section Elements</td>
+                    <td><code>&lt;thead&gt;</code></td>
+                    <td>Groups the header content</td>
+                    <td><code>&lt;thead&gt;...&lt;/thead&gt;</code></td>
+                </tr>
+                <tr>
+                    <td><code>&lt;tbody&gt;</code></td>
+                    <td>Groups the body content</td>
+                    <td><code>&lt;tbody&gt;...&lt;/tbody&gt;</code></td>
+                </tr>
+                <tr>
+                    <td><code>&lt;tfoot&gt;</code></td>
+                    <td>Groups the footer content</td>
+                    <td><code>&lt;tfoot&gt;...&lt;/tfoot&gt;</code></td>
+                </tr>
+                
+                <tr class="feature-group">
+                    <td colspan="4">Cell Spanning</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">Spanning Attributes</td>
+                    <td><code>colspan</code></td>
+                    <td>Number of columns a cell spans</td>
+                    <td><code>&lt;td colspan="3"&gt;...&lt;/td&gt;</code></td>
+                </tr>
+                <tr>
+                    <td><code>rowspan</code></td>
+                    <td>Number of rows a cell spans</td>
+                    <td><code>&lt;td rowspan="2"&gt;...&lt;/td&gt;</code></td>
+                </tr>
+                
+                <tr class="feature-group">
+                    <td colspan="4">Column Groups</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">Column Elements</td>
+                    <td><code>&lt;colgroup&gt;</code></td>
+                    <td>Specifies a group of columns</td>
+                    <td><code>&lt;colgroup&gt;...&lt;/colgroup&gt;</code></td>
+                </tr>
+                <tr>
+                    <td><code>&lt;col&gt;</code></td>
+                    <td>Specifies column properties</td>
+                    <td><code>&lt;col style="width: 20%"&gt;</code></td>
+                </tr>
+                
+                <tr class="feature-group">
+                    <td colspan="4">Accessibility Attributes</td>
+
+                </tr>
+                <tr>
+                    <td rowspan="3">Accessibility</td>
+                    <td><code>scope</code></td>
+                    <td>Associates header cells with data cells</td>
+                    <td><code>&lt;th scope="col"&gt;...&lt;/th&gt;</code></td>
+                </tr>
+                <tr>
+                    <td><code>headers</code></td>
+                    <td>Associates data cells with header cells</td>
+                    <td><code>&lt;td headers="id1 id2"&gt;...&lt;/td&gt;</code></td>
+                </tr>
+                <tr>
+                    <td><code>id</code></td>
+                    <td>Unique identifier for a cell</td>
+                    <td><code>&lt;th id="name"&gt;Name&lt;/th&gt;</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="container">
+        <h2>6. Responsive Table Example</h2>
+        <p>Resize your browser window to see how this table responds to different screen sizes.</p>
+        
+        <table class="fancy-table responsive-table">
+            <caption>Responsive Product Inventory</caption>
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Product ID">P001</td>
+                    <td data-label="Product Name">Smartphone X</td>
+                    <td data-label="Category">Electronics</td>
+                    <td data-label="Price">$999.99</td>
+                    <td data-label="Stock">15</td>
+                </tr>
+                <tr>
+                    <td data-label="Product ID">P002</td>
+                    <td data-label="Product Name">Laptop Pro</td>
+                    <td data-label="Category">Electronics</td>
+                    <td data-label="Price">$1299.99</td>
+                    <td data-label="Stock">8</td>
+                </tr>
+                <tr>
+                    <td data-label="Product ID">P003</td>
+                    <td data-label="Product Name">Office Chair</td>
+                    <td data-label="Category">Furniture</td>
+                    <td data-label="Price">$149.99</td>
+                    <td data-label="Stock">20</td>
+                </tr>
+                <tr>
+                    <td data-label="Product ID">P004</td>
+                    <td data-label="Product Name">Wireless Headphones</td>
+                    <td data-label="Category">Electronics</td>
+                    <td data-label="Price">$199.99</td>
+                    <td data-label="Stock">12</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="container">
+        <h2>Key HTML Table Attributes and Elements Demonstrated</h2>
+        <ul>
+            <li><strong>Basic Structure:</strong> table, tr, th, td elements</li>
+            <li><strong>Table Sections:</strong> thead, tbody, tfoot</li>
+            <li><strong>Cell Spanning:</strong> colspan, rowspan attributes</li>
+            <li><strong>Table Caption:</strong> caption element</li>
+            <li><strong>Column Groups:</strong> colgroup, col elements</li>
+            <li><strong>CSS Properties:</strong> border-collapse, border-spacing, nth-child selectors</li>
+            <li><strong>Responsive Design:</strong> Media queries for small screens</li>
+            <li><strong>Accessibility Features:</strong> data-label attributes for responsive tables</li>
+            <li><strong>Nested Tables:</strong> Tables within table cells</li>
+        </ul>
+    </div>
+</body>
+</html>
+

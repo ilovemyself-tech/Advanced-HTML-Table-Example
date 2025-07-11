@@ -1,2 +1,3 @@
 # Advanced-HTML-Table-Example
-This is practice we did at school
+Practiced advanced HTML and CSS table structuring and styling during in-class task
+
